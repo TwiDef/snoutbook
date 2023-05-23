@@ -1,0 +1,26 @@
+.nav {
+    grid-area: nav;
+}
+
+
+.item a{
+    text-decoration: none;
+    color: aliceblue;
+    position: relative;
+}
+
+.item a::after {
+    content:"";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    border-radius: 4px;
+    background-color: #fff;
+    top: 25px;
+    left: 0;
+    transition: .3s all;
+}
+
+.item:hover a::after {
+    width: 100%;
+}

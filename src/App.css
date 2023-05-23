@@ -7,21 +7,10 @@
     "nav content content";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    /* grid-gap: 10px; */
+    grid-gap: 10px;
 }
 
-.header {
-    grid-area: header;
-    background-color: rgb(82, 103, 124);
-}
 
-.nav {
-    grid-area: nav;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(128, 156, 185);
-}
 
-.content {
-    grid-area: content;
-}
+
+
