@@ -2,11 +2,31 @@
     grid-area: nav;
 }
 
+.item {
+    padding-bottom: 14px;
+}
+.item:last-child {
+    padding-bottom: 0;
+}
+
 .item a{
     text-decoration: none;
     color: aliceblue;
     position: relative;
 }
+
+.item a.activeLink::before {
+    content: "";
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 106%;
+    background-color:aliceblue;
+}
+
 
 .item a::after {
     content:"";
