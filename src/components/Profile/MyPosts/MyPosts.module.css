@@ -1,7 +1,7 @@
-.content {
-    grid-area: content;
+.postBlock {
+    padding: 10px;
 }
 
 .posts {
-    color:brown;
+    margin-top: 20px;
 }

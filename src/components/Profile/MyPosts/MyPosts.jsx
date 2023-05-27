@@ -3,18 +3,39 @@ import classes from './MyPosts.module.css'
 import Post from './Post/Post';
 
 const MyPosts = () => {
-    return (
-        <div>
-            my posts
 
+    const posts = [
+        { id: 1, message: "first post", likesCount: 15 },
+        { id: 2, message: "second post", likesCount: 5 },
+        { id: 3, message: "another post", likesCount: 23 },
+    ]
+
+    const postsElements = posts.map(post =>
+        <Post
+            id={post.id}
+            message={post.message}
+            likesCount={post.likesCount}
+        />)
+
+    return (
+        <div className={classes.postBlock}>
+
+            <h3>My posts</h3>
+
+            <div>
+
+                <div>
+                    <textarea cols="30" rows="5"></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
+
+            </div>
             <div className={classes.posts}>
-                <textarea cols="30" rows="5"></textarea>
-                <button>Add post</button>
+                {postsElements}
             </div>
 
-            <Post likesCount={15} message="first post" />
-            <Post likesCount={5} message="second post" />
-            <Post likesCount={23} message="another post" />
         </div>
 
     )
