@@ -1,0 +1,30 @@
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.dialogsItems .dialog {
+
+}
+
+.dialogsItems .active {
+    color: gold;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: aliceblue;
+    position: relative;
+}
+
+.dialog a.activeLink::before {
+    content: "";
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 108%;
+    background-color:aliceblue;
+}
