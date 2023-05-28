@@ -4,3 +4,7 @@
     display: flex;
     align-items: center;
 }
+
+.headerImg {
+    margin-left: 10px;  
+}

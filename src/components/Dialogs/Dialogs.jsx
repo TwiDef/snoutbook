@@ -5,22 +5,12 @@ import classes from './Dialogs.module.css';
 
 const Dialogs = (props) => {
 
-    const dialogs = [
-        { id: 1, name: "Dmitriy" },
-        { id: 2, name: "Andrey" },
-        { id: 3, name: "Alex" },
-        { id: 4, name: "Sarah" },
-        { id: 5, name: "Galthran" },
-    ]
 
-    const messages = [
-        { id: 1, message: "Hi" },
-        { id: 2, message: "Lorem" },
-        { id: 3, message: "How are you" },
-    ]
+    const dialogsElements = props.dialogs
+        .map((dialog, index) => <DialogItem key={index} id={dialog.id} name={dialog.name} />)
 
-    const dialogsElements = dialogs.map(dialog => <DialogItem id={dialog.id} name={dialog.name} />)
-    const messagesElements = messages.map(message => <Message id={message.id} message={message.message} />)
+    const messagesElements = props.messages
+        .map((message, index) => <Message key={index} id={message.id} message={message.message} />)
 
     return (
         <div className={classes.dialogs}>
