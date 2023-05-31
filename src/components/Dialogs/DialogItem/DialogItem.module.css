@@ -11,6 +11,13 @@
     color: gold;
 }
 
+.dialog {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
 .dialog a {
     text-decoration: none;
     color: aliceblue;
@@ -27,4 +34,10 @@
     transform: translateY(-50%);
     right: 108%;
     background-color:aliceblue;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
 }

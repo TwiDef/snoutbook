@@ -6,10 +6,14 @@ import classes from './Dialogs.module.css';
 const Dialogs = (props) => {
 
 
-    const dialogsElements = props.dialogs
-        .map((dialog, index) => <DialogItem key={index} id={dialog.id} name={dialog.name} />)
+    const dialogsElements = props.state.dialogs
+        .map((dialog, index) => <DialogItem
+            key={index}
+            id={dialog.id}
+            name={dialog.name}
+            avatar={dialog.avatar} />)
 
-    const messagesElements = props.messages
+    const messagesElements = props.state.messages
         .map((message, index) => <Message key={index} id={message.id} message={message.message} />)
 
     return (
