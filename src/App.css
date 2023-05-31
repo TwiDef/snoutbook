@@ -12,4 +12,5 @@
 
 .app-wrapper-content {
     grid-area: content;
+    margin-left: 40px;
 }

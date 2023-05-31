@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+
+.name {
+    color:azure;
+    font-size: 18px;
+}
