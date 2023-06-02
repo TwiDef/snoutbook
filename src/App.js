@@ -13,28 +13,27 @@ import './App.css';
 function App(props) {
 
     return (
-        <BrowserRouter>
-            <div className="app-wrapper">
-                <Header />
-                <Navbar state={props.state.sideBar} />
+        <div className="app-wrapper">
+            <Header />
+            <Navbar state={props.state.sideBar} />
 
-                <div className="app-wrapper-content">
-                    <Routes>
-                        <Route path="/profile" element={<Profile
-                            state={props.state.profilePage} />} />
+            <div className="app-wrapper-content">
+                <Routes>
 
-                        <Route path="/dialogs/*" element={<Dialogs
-                            state={props.state.dialogsPage} />} />
+                    <Route path="/profile" element={<Profile
+                        addPost={props.addPost}
+                        state={props.state.profilePage} />} />
 
-                        <Route path="/news" element={<News />} />
-                        <Route path="/music" element={<Music />} />
-                        <Route path="/settings" element={<Settings />} />
+                    <Route path="/dialogs/*" element={<Dialogs
+                        state={props.state.dialogsPage} />} />
 
-                    </Routes>
-                </div>
+                    <Route path="/news" element={<News />} />
+                    <Route path="/music" element={<Music />} />
+                    <Route path="/settings" element={<Settings />} />
 
+                </Routes>
             </div>
-        </BrowserRouter >
+        </div>
     );
 }
 
