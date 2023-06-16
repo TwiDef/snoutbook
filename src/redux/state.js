@@ -8,7 +8,8 @@ const state = {
             { id: 1, message: "first post", likesCount: 15 },
             { id: 2, message: "second post", likesCount: 5 },
             { id: 3, message: "another post", likesCount: 23 },
-        ]
+        ],
+        newPostText: ''
     },
     dialogsPage: {
         dialogs: [
@@ -68,15 +69,26 @@ const state = {
 }
 /* ######## DATA ######## */
 
-export const addPost = (postMessage) => {
 
+
+/* ######## FUNCTIONS ######## */
+
+export const addPost = () => {
     const newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
     rerenderEntireTree(state);
 }
+
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+/* ######## FUNCTIONS ######## */
 
 export default state;
