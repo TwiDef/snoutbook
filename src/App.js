@@ -26,6 +26,8 @@ function App(props) {
                         state={props.state.profilePage} />} />
 
                     <Route path="/dialogs/*" element={<Dialogs
+                        addMessage={props.addMessage}
+                        updateNewMessageText={props.updateNewMessageText}
                         state={props.state.dialogsPage} />} />
 
                     <Route path="/news" element={<News />} />

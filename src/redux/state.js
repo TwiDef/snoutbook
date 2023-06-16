@@ -43,7 +43,8 @@ const state = {
             { id: 1, message: "Hi" },
             { id: 2, message: "Lorem" },
             { id: 3, message: "How are you" },
-        ]
+        ],
+        newMessageText: ''
     },
 
     sideBar: {
@@ -88,6 +89,24 @@ export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
+
+export const addMessage = () => {
+    const newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText,
+    }
+    state.dialogsPage.messages.push(newMessage)
+    state.dialogsPage.newMessageText = ''
+    rerenderEntireTree(state);
+}
+
+export const updateNewMessageText = (newMessage) => {
+    state.dialogsPage.newMessageText = newMessage;
+    rerenderEntireTree(state);
+}
+
+
+
 
 /* ######## FUNCTIONS ######## */
 
