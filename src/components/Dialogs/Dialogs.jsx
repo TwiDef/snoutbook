@@ -14,6 +14,7 @@ const Dialogs = (props) => {
             avatar={dialog.avatar} />)
 
     const messagesElements = props.state.messages
+
         .map((message, index) => <Message
             key={index}
             id={message.id}
@@ -22,13 +23,12 @@ const Dialogs = (props) => {
     const newMessageElement = React.createRef()
 
     const addMessage = () => {
-        props.addMessage()
-        props.updateNewMessageText('')
+        props.dispatch({ type: 'ADD-MESSAGE' })
     }
 
     const onMessageChange = () => {
         let text = newMessageElement.current.value
-        props.updateNewMessageText(text)
+        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: text })
     }
 
     return (
