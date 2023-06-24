@@ -10,6 +10,7 @@ import Settings from './components/Settings/Settings';
 
 import './App.css';
 
+
 function App(props) {
 
     return (
@@ -25,8 +26,9 @@ function App(props) {
                         state={props.state.profilePage} />} />
 
                     <Route path="/dialogs/*" element={<Dialogs
+                        store={props.store}
                         dispatch={props.dispatch}
-                        state={props.state.dialogsPage} />} />
+                    />} />
 
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
