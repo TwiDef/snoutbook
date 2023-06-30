@@ -7,15 +7,15 @@ const Dialogs = (props) => {
     let state = props.dialogsPage;
 
     const dialogsElements = state.dialogs
-        .map((dialog, index) => <DialogItem
-            key={index}
+        .map((dialog) => <DialogItem
+            key={dialog.id}
             id={dialog.id}
             name={dialog.name}
             avatar={dialog.avatar} />)
 
     const messagesElements = state.messages
-        .map((message, index) => <Message
-            key={index}
+        .map((message) => <Message
+            key={message.id}
             id={message.id}
             message={message.message} />)
 

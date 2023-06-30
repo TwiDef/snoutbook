@@ -37,7 +37,7 @@ const Navbar = (props) => {
                 </div>
             </nav>
 
-            <Sidebar state={props.state} />
+            {/* <Sidebar state={props.state} /> */}
         </div>
 
     )

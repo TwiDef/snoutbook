@@ -8,28 +8,22 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const rerenderEntireTree = (state) => {
-    root.render(
-        <React.StrictMode>
-            <BrowserRouter>
+root.render(
+    <React.StrictMode>
+        <BrowserRouter>
 
-                <Provider store={store}>
-                    <App
-                        state={state}
-                    //dispatch={store.dispatch.bind(store)}
-                    //store={store}
-                    />
-                </Provider>
+            <Provider store={store}>
+                <App
+                //state={state}
+                //dispatch={store.dispatch.bind(store)}
+                //store={store}
+                />
+            </Provider>
 
-            </BrowserRouter>
-        </React.StrictMode>
-    );
-}
+        </BrowserRouter>
+    </React.StrictMode>
+);
 
-rerenderEntireTree(store.getState());
 
-store.subscribe(() => {
-    let state = store.getState()
-    rerenderEntireTree(state);
-});
+
 
