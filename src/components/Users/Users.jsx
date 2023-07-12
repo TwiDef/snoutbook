@@ -1,6 +1,7 @@
 import React from "react";
 import userDefault from '../../assets/images/default-user.png';
 import classes from './Users.module.css';
+import { NavLink } from "react-router-dom";
 
 const Users = (props) => {
 
@@ -14,42 +15,45 @@ const Users = (props) => {
         <div>
             {
                 pages.map(page => {
-                    return <span
-                        /* key={page.id} */
-                        className={props.currentPage === page && classes.selectedPage}
+                    return <span key={page}
+                        /* className={props.currentPage === page && classes.selectedPage} */
+                        className={props.currentPage ? page : classes.selectedPage}
                         onClick={(e) => { props.onPageChanged(page) }}>{page}
                     </span>
                 })
             }
         </div>
         {
-            props.users.map(user => <div key={user.id}>
-                <span>
-                    <div>
-                        <img src={user.photos.small != null ?
-                            user.photos.small :
-                            userDefault}
-                            alt="avatar"
-                            className={classes.userPhoto} />
-                    </div>
-                    <div>
-                        {user.followed ?
-                            <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button> :
-                            <button onClick={() => { props.follow(user.id) }}>Follow</button>
-                        }
-                    </div>
-                </span>
-                <span>
+            props.users.map(user =>
+                <div key={user.id}>
                     <span>
-                        <div>{user.name}</div>
-                        <div>{user.status}</div>
+                        <div>
+                            <NavLink to={'/profile/' + user.id}>
+                                <img src={user.photos.small != null ?
+                                    user.photos.small :
+                                    userDefault}
+                                    alt="avatar"
+                                    className={classes.userPhoto} />
+                            </NavLink>
+                        </div>
+                        <div>
+                            {user.followed ?
+                                <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button> :
+                                <button onClick={() => { props.follow(user.id) }}>Follow</button>
+                            }
+                        </div>
                     </span>
                     <span>
-                        <div>{"user.location.country"}</div>
-                        <div>{"user.location.city"}</div>
+                        <span>
+                            <div>{user.name}</div>
+                            <div>{user.status}</div>
+                        </span>
+                        <span>
+                            <div>{"user.location.country"}</div>
+                            <div>{"user.location.city"}</div>
+                        </span>
                     </span>
-                </span>
-            </div>)
+                </div>)
         }
     </div>
 }
