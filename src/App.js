@@ -8,13 +8,15 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import HeaderContainer from './components/Header/HeaderContaner';
 
 import './App.css';
+
 
 function App(props) {
     return (
         <div className="app-wrapper">
-            <Header />
+            <HeaderContainer />
             <Navbar /* state={props.state.sideBar} */ />
 
             <div className="app-wrapper-content">
