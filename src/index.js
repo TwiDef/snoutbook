@@ -13,9 +13,6 @@ root.render(
 
         <Provider store={store}>
             <App
-            //state={state}
-            //dispatch={store.dispatch.bind(store)}
-            //store={store}
             />
         </Provider>
 
