@@ -35,9 +35,9 @@ export const setAuthUserData = (userId, email, login) => ({
 /* ***************************************************************************** */
 
 /* thunks */
-export const setAuthLogin = () => {
+export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.setAuth().then(data => {
+        authAPI.me().then(data => {
             const { id, email, login } = data.data
             dispatch(setAuthUserData(id, email, login))
         })
