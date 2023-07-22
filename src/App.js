@@ -11,6 +11,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContaner';
 
 import './App.css';
+import Login from './components/Login/Login';
 
 
 function App(props) {
@@ -32,6 +33,7 @@ function App(props) {
                     />} />
 
                     <Route path="/users" element={<UsersContainer />} />
+                    <Route path="/login" element={<Login />} />
 
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />

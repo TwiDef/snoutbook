@@ -37,10 +37,13 @@ export const setAuthUserData = (userId, email, login) => ({
 /* thunks */
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.me().then(data => {
-            const { id, email, login } = data.data
-            dispatch(setAuthUserData(id, email, login))
-        })
+        authAPI.me()
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    const { id, email, login } = response.data.data
+                    dispatch(setAuthUserData(id, email, login))
+                }
+            })
     }
 }
 /* thunks */

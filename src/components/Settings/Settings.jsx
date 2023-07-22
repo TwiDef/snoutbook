@@ -4,9 +4,7 @@ import classes from './Settings.module.css';
 const Settings = (props) => {
 
     return (
-        <div>
-            Settings
-        </div>
+        <h1>Settings</h1>
     )
 }
 
