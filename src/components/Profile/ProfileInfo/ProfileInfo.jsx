@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import defaultUser from '../../../assets/images/default-user.png'
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -12,15 +13,15 @@ const ProfileInfo = (props) => {
     return (
         <div>
 
-            <div>
+            {/* <div>
                 <img src="https://media.tproger.ru/uploads/2016/10/reactmini.png" alt="background" />
-            </div>
+            </div> */}
             <div className={classes.descriptionBlock}>
                 <img width={300} height={300}
                     src={props.profile.photos.large
                         ? props.profile.photos.large
                         : defaultUser} alt="" />
-                ava + descr
+                <ProfileStatus status={"Hello"} />
                 <p>{props.profile.aboutMe}</p>
             </div>
 
