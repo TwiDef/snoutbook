@@ -2,6 +2,9 @@ import React from 'react';
 import Users from './Users';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Preloader from '../common/Preloader/Preloader';
+import { withAuthRedirect } from '../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 import {
     follow,
@@ -11,9 +14,6 @@ import {
     getUsers
 } from '../../redux/users-reduces';
 
-import Preloader from '../common/Preloader/Preloader';
-import { usersAPI } from '../../api/api';
-import { withAuthRedirect } from '../hoc/withAuthRedirect';
 
 //import classes from '';
 
@@ -62,34 +62,13 @@ const mapStateToProps = (state) => {
     }
 }
 
-/* const mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
-    }
-} */
-
-
-export default withAuthRedirect(connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingProgress,
-    getUsers
-})(UserContainer));
+export default compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setCurrentPage,
+        toggleFollowingProgress,
+        getUsers
+    })
+)(UserContainer)
