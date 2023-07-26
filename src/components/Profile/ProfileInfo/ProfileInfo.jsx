@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
                     src={props.profile.photos.large
                         ? props.profile.photos.large
                         : defaultUser} alt="" />
-                <ProfileStatus status={props.status} />
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                 <p>{props.profile.aboutMe}</p>
             </div>
 
