@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
 import classes from './Dialogs.module.css';
+import AddMessageFormRedux from './AddMessageForm';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -20,17 +21,11 @@ const Dialogs = (props) => {
             id={message.id}
             message={message.message} />)
 
-    const newMessageBody = state.newMessageBody;
+    /* const newMessageBody = state.newMessageBody; */
 
-    const onSendMessageClick = () => {
-        props.sendMessage()
+    const addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody)
     }
-
-    const onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body)
-    }
-
 
     if (!props.isAuth) return <Navigate to="/login" />
 
@@ -44,17 +39,9 @@ const Dialogs = (props) => {
 
             <div className={classes.messages}>
                 <div>{messagesElements}</div>
-
                 <div>
-                    <textarea
-                        placeholder='Enter your message'
-                        onChange={onNewMessageChange}
-                        value={newMessageBody} />
+                    <AddMessageFormRedux onSubmit={addNewMessage} />
                 </div>
-                <div>
-                    <button onClick={onSendMessageClick}>add message</button>
-                </div>
-
             </div>
 
         </div>
