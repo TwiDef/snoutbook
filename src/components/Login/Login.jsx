@@ -3,8 +3,9 @@ import { Field, reduxForm } from "redux-form";
 import { Input } from "../common/FormsControl/FormsControl";
 import { required } from "../../utils/validators/validators";
 import { connect } from 'react-redux';
-import { login, logout } from "../../redux/auth-reduser";
+import { login, logout } from "../../redux/auth-reducer";
 import { Navigate } from "react-router-dom";
+import classes from './../common/FormsControl/FormsControl.module.css';
 
 const LoginForm = (props) => {
     return (
@@ -28,6 +29,9 @@ const LoginForm = (props) => {
                     component={Input} />
                 remember me
             </div>
+
+            {props.error && <div className={classes.formSummaryError}> {props.error} </div>}
+
             <div>
                 <button>Login</button>
             </div>

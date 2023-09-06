@@ -7,4 +7,12 @@
 
 .formControl.error span{
     color: red;
+    font-size: 26px;
+}
+
+.formSummaryError {
+    border: red 2px solid;
+    padding: 5px;
+    color: red;
+    font-size: 26px;
 }
