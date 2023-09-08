@@ -18,8 +18,8 @@ const Users = (props) => {
             {
                 pages.map(page => {
                     return <span key={page}
-                        /* className={props.currentPage === page && classes.selectedPage} */
-                        className={props.currentPage ? page : classes.selectedPage}
+                        className={props.currentPage === page && classes.selectedPage}
+                        /* className={props.currentPage ? page : classes.selectedPage} */
                         onClick={(e) => { props.onPageChanged(page) }}>{page}
                     </span>
                 })
