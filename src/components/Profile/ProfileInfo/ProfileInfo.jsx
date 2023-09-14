@@ -3,6 +3,7 @@ import classes from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import defaultUser from '../../../assets/images/default-user.png'
 import ProfileStatus from './ProfileStatus/ProfileStatus';
+import ProfileStatusNew from './ProfileStatus/ProfileStatusNew';
 
 const ProfileInfo = (props) => {
 
@@ -21,7 +22,8 @@ const ProfileInfo = (props) => {
                     src={props.profile.photos.large
                         ? props.profile.photos.large
                         : defaultUser} alt="" />
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+
+                <ProfileStatusNew status={props.status} updateStatus={props.updateStatus} />
                 <p>{props.profile.aboutMe}</p>
             </div>
 
